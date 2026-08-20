@@ -1,32 +1,39 @@
 // ========================================
-// LETTER PAGE
+// AUDIO
 // ========================================
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+const audio = document.getElementById("musica1");
 
-        const letter =
-            document.querySelector(
-                ".letter-card"
-            );
+function playAudio() {
 
-
-        if (!letter) {
-            return;
-        }
-
-
-        // Pequeño efecto al terminar
-        // la aparición de la carta.
-
-        setTimeout(() => {
-
-            letter.classList.add(
-                "opened"
-            );
-
-        }, 1200);
-
+    if (!audio) {
+        console.error("No se encontró el elemento de audio.");
+        return;
     }
+
+    audio.play().catch((error) => {
+
+        console.warn(
+            "El navegador bloqueó la reproducción automática:",
+            error
+        );
+
+    });
+}
+
+
+// ========================================
+// START AUDIO
+// ========================================
+
+playAudio();
+
+
+// Si el navegador bloquea el autoplay,
+// intentar reproducir después de una interacción.
+
+document.addEventListener(
+    "click",
+    playAudio,
+    { once: true }
 );
