@@ -1,0 +1,559 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fff7fa,
+            #f8dce8 50%,
+            #edc5d6
+        );
+
+    color: #4b303c;
+
+    overflow-x: hidden;
+}
+
+
+/* ========================================
+   LETTER PAGE
+======================================== */
+
+.letter-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+
+/* ========================================
+   LETTER
+======================================== */
+
+.letter-card {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 720px;
+
+    padding: 50px 55px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf9,
+            #fffafc
+        );
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(100, 50, 70, 0.22),
+
+        0 8px 20px
+        rgba(100, 50, 70, 0.1);
+
+    animation:
+        letterAppear
+        1.2s
+        cubic-bezier(.17,.67,.3,1.2)
+        forwards;
+}
+
+
+.letter-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border:
+        1px solid
+        rgba(185, 95, 125, 0.2);
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.envelope-icon {
+
+    text-align: center;
+
+    font-size: 3rem;
+
+    margin-bottom: 15px;
+
+    animation:
+        envelopeFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+.letter-label {
+
+    text-align: center;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 0.7rem;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    color: #b15c7c;
+}
+
+
+h1 {
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size:
+        clamp(
+            2.2rem,
+            6vw,
+            3.5rem
+        );
+
+    font-weight: normal;
+
+    font-style: italic;
+
+    color: #5b3043;
+}
+
+
+/* ========================================
+   DIVIDER
+======================================== */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin:
+        25px
+        0
+        30px;
+
+    color: #c76789;
+}
+
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    width: 100px;
+
+    max-width: 20%;
+
+    height: 1px;
+
+    background: #ddb1c1;
+}
+
+
+/* ========================================
+   LETTER CONTENT
+======================================== */
+
+.letter-content {
+
+    font-size: 1.08rem;
+
+    line-height: 1.9;
+
+    text-align: left;
+}
+
+
+.letter-content p {
+
+    margin-bottom: 20px;
+
+    opacity: 0;
+
+    animation:
+        paragraphAppear
+        0.8s
+        ease
+        forwards;
+}
+
+
+.letter-content p:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+
+.letter-content p:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+
+.letter-content p:nth-child(3) {
+    animation-delay: 1s;
+}
+
+
+.letter-content p:nth-child(4) {
+    animation-delay: 1.3s;
+}
+
+
+.letter-content p:nth-child(5) {
+    animation-delay: 1.6s;
+}
+
+
+.letter-content p:nth-child(6) {
+    animation-delay: 1.9s;
+}
+
+
+.letter-content p:nth-child(7) {
+    animation-delay: 2.2s;
+}
+
+
+.letter-content p:nth-child(8) {
+    animation-delay: 2.5s;
+}
+
+
+.letter-content p:nth-child(9) {
+    animation-delay: 2.8s;
+}
+
+
+/* ========================================
+   FINAL MESSAGE
+======================================== */
+
+.final-message {
+
+    padding: 20px;
+
+    text-align: center;
+
+    font-size: 1.2rem;
+
+    font-style: italic;
+
+    color: #8c4562;
+
+    background:
+        rgba(250, 224, 235, 0.5);
+
+    border-radius: 12px;
+}
+
+
+/* ========================================
+   SIGNATURE
+======================================== */
+
+.signature {
+
+    margin-top: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 5px;
+
+    font-size: 1.1rem;
+
+    font-style: italic;
+}
+
+
+.signature strong {
+
+    font-size: 1.4rem;
+
+    color: #9e4d6b;
+}
+
+
+/* ========================================
+   FLOATING HEARTS
+======================================== */
+
+.hearts span {
+
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 1.5rem;
+
+    pointer-events: none;
+
+    animation:
+        heartFloat
+        linear
+        infinite;
+
+    opacity: 0.6;
+}
+
+
+.hearts span:nth-child(1) {
+
+    left: 10%;
+
+    animation-duration: 8s;
+}
+
+
+.hearts span:nth-child(2) {
+
+    left: 25%;
+
+    animation-duration: 11s;
+
+    animation-delay: 2s;
+}
+
+
+.hearts span:nth-child(3) {
+
+    left: 40%;
+
+    animation-duration: 9s;
+
+    animation-delay: 4s;
+}
+
+
+.hearts span:nth-child(4) {
+
+    left: 55%;
+
+    animation-duration: 12s;
+
+    animation-delay: 1s;
+}
+
+
+.hearts span:nth-child(5) {
+
+    left: 70%;
+
+    animation-duration: 10s;
+
+    animation-delay: 3s;
+}
+
+
+.hearts span:nth-child(6) {
+
+    left: 82%;
+
+    animation-duration: 13s;
+
+    animation-delay: 5s;
+}
+
+
+.hearts span:nth-child(7) {
+
+    left: 92%;
+
+    animation-duration: 9s;
+
+    animation-delay: 2s;
+}
+
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes letterAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(50px)
+            scale(0.85)
+            rotateX(10deg);
+    }
+
+    70% {
+
+        transform:
+            translateY(-8px)
+            scale(1.02);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1)
+            rotateX(0);
+    }
+}
+
+
+@keyframes paragraphAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes envelopeFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px)
+            rotate(3deg);
+    }
+}
+
+
+@keyframes heartFloat {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(0.7)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+
+        opacity: 0.6;
+    }
+
+    50% {
+
+        opacity: 0.8;
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            scale(1.2)
+            rotate(25deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .letter-page {
+
+        padding:
+            25px
+            15px;
+    }
+
+
+    .letter-card {
+
+        padding:
+            40px
+            25px;
+    }
+
+
+    .letter-content {
+
+        font-size: 1rem;
+
+        line-height: 1.8;
+    }
+
+
+    .signature {
+
+        align-items: center;
+    }
+}

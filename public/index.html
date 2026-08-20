@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="You have a special message from Miguel."
+    >
+
+    <title>💌 You have a message</title>
+
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+
+<body>
+
+    <main class="page">
+
+        <section
+            class="card"
+            aria-labelledby="message-title"
+        >
+
+            <!-- ========================================
+                 IMAGE
+            ========================================= -->
+
+            <div class="image-container">
+
+                <img
+                    src="cardf.gif"
+                    alt="A special message waiting for you"
+                    class="message-image"
+                >
+
+            </div>
+
+
+            <!-- ========================================
+                 CONTENT
+            ========================================= -->
+
+            <div class="content">
+
+                <span class="eyebrow">
+                    SPECIAL MESSAGE
+                </span>
+
+
+                <h1 id="message-title">
+                    ❗ You got a message ❗
+                </h1>
+
+
+                <p class="subtitle">
+                    Someone sent you a message
+                    <br>
+                    (not from your pookie)... 👀
+                </p>
+
+
+                <p class="question">
+                    What could it be? 💭
+                </p>
+
+
+                <!-- ========================================
+                     COUNTDOWN
+                ========================================= -->
+
+                <div class="countdown-container">
+
+                    <p class="countdown-label">
+                        Available in
+                    </p>
+
+                    <div
+                        class="timer"
+                        id="countdown"
+                        aria-live="polite"
+                    >
+                        Loading...
+                    </div>
+
+                </div>
+
+
+                <!-- ========================================
+                     OPEN BUTTON
+                ========================================= -->
+
+                <div class="buttons">
+
+                    <a
+                        href="index2.html"
+                        class="btn btn-primary disabled"
+                        id="open-button"
+                        aria-disabled="true"
+                    >
+
+                        <span id="lock-icon">
+                            🔒
+                        </span>
+
+                        <span>
+                            Open
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
